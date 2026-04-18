@@ -36,11 +36,11 @@ export async function register(formData: FormData) {
   }
 
   if (data.user) {
-    // Seed default categories for new user
     await supabase.rpc('create_default_categories', { p_user_id: data.user.id })
   }
 
-  redirect('/dashboard')
+  // Retorna o e-mail para exibir a tela de confirmação no cliente
+  return { success: true, email }
 }
 
 export async function logout() {

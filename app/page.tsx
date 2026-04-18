@@ -4,6 +4,7 @@ import {
   ArrowRight, CheckCircle2, Wallet
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/layout/ThemeToggle'
 
 const features = [
   {
@@ -71,7 +72,8 @@ export default function LandingPage() {
             </div>
             <span className="text-lg font-700 tracking-tight">Finança</span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
             <Link href="/login">
               <Button variant="ghost" size="sm">Entrar</Button>
             </Link>
