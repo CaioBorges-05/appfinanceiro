@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# local screenshots / dev artifacts
+Captura de Tela*
+
 # debug
 npm-debug.log*
 yarn-debug.log*

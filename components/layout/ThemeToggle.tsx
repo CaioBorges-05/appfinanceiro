@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Moon, Sun } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
@@ -11,17 +10,29 @@ export function ThemeToggle() {
 
   useEffect(() => setMounted(true), [])
 
-  if (!mounted) return <div className="h-9 w-9" />
+  if (!mounted) return (
+    <div className="h-9 w-24 rounded-full bg-muted animate-pulse" />
+  )
+
+  const isDark = theme === 'dark'
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="h-9 w-9"
-      title={theme === 'dark' ? 'Modo claro' : 'Modo escuro'}
+    <button
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      className="flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-500 text-foreground shadow-sm transition-all hover:bg-muted"
+      title={isDark ? 'Mudar para modo claro' : 'Mudar para modo escuro'}
     >
-      {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-    </Button>
+      {isDark ? (
+        <>
+          <Sun className="h-3.5 w-3.5 text-amber-500" />
+          <span>Claro</span>
+        </>
+      ) : (
+        <>
+          <Moon className="h-3.5 w-3.5 text-slate-600" />
+          <span>Escuro</span>
+        </>
+      )}
+    </button>
   )
 }

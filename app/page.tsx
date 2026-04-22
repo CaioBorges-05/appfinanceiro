@@ -70,7 +70,7 @@ export default function LandingPage() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
               <Wallet className="h-4 w-4 text-white" />
             </div>
-            <span className="text-lg font-700 tracking-tight">Finança</span>
+            <span className="text-lg font-700 tracking-tight">Finanças do Caio Borges</span>
           </div>
           <div className="flex items-center gap-2">
             <ThemeToggle />
@@ -251,10 +251,10 @@ export default function LandingPage() {
             <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary">
               <Wallet className="h-3 w-3 text-white" />
             </div>
-            <span className="text-sm font-600">Finança</span>
+            <span className="text-sm font-600">Finanças do Caio Borges</span>
           </div>
           <p className="text-xs text-muted-foreground">
-            © 2026 Finança. Gestão financeira pessoal.
+            © 2026 Finanças do Caio Borges. Gestão financeira pessoal.
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
             <Link href="/login" className="hover:text-foreground transition-colors">Entrar</Link>
